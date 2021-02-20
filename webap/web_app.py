@@ -53,7 +53,7 @@ def main():
             host       = 'localhost',
             database   = 'TCEprofile',
             user       = 'root',
-            password   = '2wlApluS'
+            password   = '*******'
         )
         print("Connect successfully ")
         return con 
