@@ -1,0 +1,104 @@
+<Description of dataset> 
+
+* There are all five tables(or files) in a dataset.
+* The date of genotype was used as a baseline and all the fields providing date information  contain the number of weeks from the baseline.
+
+* This document was updated on 2005-03-30.
+* For any question, please email Soo-Yon Rhee (syrhee@stanford.edu).
+
+-----------------------------------------------------------------------------------------
+TABLE RX.txt
+
+DESCRIPTION
+	This file contains a list of regimens for each patient who enrolled the study.
+
+FIELD DESCRIPTION
+	PtID -- a patient identifier
+	Alias -- a patient name alias
+	ExactDateUnknown -- "No" if the exact dates of start and stop of a regimen are known and the StartDate and StopDate columns contain the exact dates
+			    "Yes" if the exact dates of start and stop of a regimen are not known and StartDate and StopDate columns contain made-up dates
+	DrugOrderUnknown -- "No" if the drugs in a regimen are known to be taken at the same time
+			    "Yes" if the combination of drugs taken at the same time or the order of drugs taken is not known 
+	StartDate -- date of start of a regimen (number of weeks from the baseline)
+	StopDate -- date of stop of a regimen (number of weeks from the baseline)
+	List of Drugs  -- "1" if a regimen contains the corresponding drug or "0" otherwise. 
+                       -- if the column 'PI', 'NRTI' or 'NNRTI' has a value '1', the patient had a drug in the corresponding ARV class but the name of drug is not known
+
+
+FORMAT	Each field is delimited by a tab.
+
+-----------------------------------------------------------------------------------------
+TABLE PR.txt
+
+DESCRIPTION
+	This file contains a list of protease sequences that were obtained from patients  who enrolled the study.
+
+FIELD DESCRIPTION
+	PtID -- a patient identifier
+	Alias -- a patient name alias
+	IsolateDate -- date of genotype (the baseline)
+	Subtype -- subtype information
+	MutList -- a list of mutations (differences from Subtype B consensus amino acid sequence) 
+	List of positions (1 to 99)  -- Amino acid at a position. 
+	     '-' indicates consensus.
+	     '.' indicates no sequence.
+	     '*' indicates a stop codon.
+	     '#' indicates insertions.
+	     '~' indicates deletions.
+	     a letter indicates one letter Amino Acid substitution.
+	     2 or more letters indicates mixtures at this position.
+
+FORMAT	Each field is delimited by a tab.
+
+-----------------------------------------------------------------------------------------
+TABLE RT.txt
+
+DESCRIPTION
+	This file contains a list of RT sequences that were obtained from patients who enrolled the study.
+
+FIELD DESCRIPTION
+	Alias -- a patient name alias
+	IsolateDate -- date of genotype (the baseline)
+	Subtype -- subtype information
+	MutList -- a list of mutations (differences from Subtype B consensus amino acid sequence) 
+	List of positions (1 to 240)  -- Amino acid at a position. 
+	     '-' indicates consensus.
+	     '.' indicates no sequence.
+	     '*' indicates a stop codon.
+	     '#' indicates insertions.
+	     '~' indicates deletions.
+	     one of more letters indicate a Amino Acid substitution or mixtures.
+
+FORMAT	Each field is delimited by a tab.
+
+-----------------------------------------------------------------------------------------
+TABLE RNA.txt
+
+DESCRIPTION
+	This file contains a list of plasma HIV RNA levels that were measured on patients who enrolled the study.
+
+FIELD DESCRIPTION
+	PtID -- a patient identifier
+	RNADate -- date of measurement (number of weeks from the baseline)
+	VLoad -- plasma HIV RNA levels in a log-transformed value(copies/ml)
+	VLoadMatch -- '<' if the VLoad is less than the lower limit of detection for the assay used
+		      '=' otherwise. 
+
+FORMAT	Each field is delimited by a tab.
+
+-----------------------------------------------------------------------------------------
+TABLE CD4.txt
+
+DESCRIPTION
+	This file contains a list of CD4 counts that were measured on patients who  who enrolled the study.
+
+FIELD DESCRIPTION
+	PtID -- a patient identifier
+	CD4Date -- date of measurement (number of weeks from the baseline)
+	CD4Count -- number of CD4 cells (cells/ml)
+
+FORMAT	Each field is delimited by a tab.
+
+	     
+-----------------------------------------------------------------------------------------	     
+	     
